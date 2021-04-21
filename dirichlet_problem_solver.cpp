@@ -164,6 +164,88 @@ void Dirichlet_problem_solver::print_solution() {
             printf("%5.3lf   ", solution[i][j]);
         printf("\n");
     }
+
+    printf("%5.16lf   ", discrepancy_of_solution());
+}
+
+Dirichlet_problem_solver::matrix Dirichlet_problem_solver::fill_right_side()
+{
+    auto F = matrix(m_y_partitions + 1, vec(n_x_partitions + 1, 0.0));
+
+    for (int j = 1; j < m_y_partitions; j++)
+        for (int i = 1; i < n_x_partitions; i++)
+        {
+            double Xi, Yj, sum = 0;
+            Xi = x_left_bound + i * x_step;
+            Yj = y_left_bound + j * y_step;
+
+            if (j == 1)
+                sum += (1 / (y_step * y_step)) * M3(Xi);
+            else if (j == m_y_partitions - 1)
+                sum += (1 / (y_step * y_step)) * M4(Xi);
+
+            if (i == 1)
+                sum += (1 / (x_step * x_step)) * M1(Yj);
+            else if (i == n_x_partitions - 1)
+                sum += (1 / (x_step * x_step)) * M2(Yj);
+
+            F[i][j] = -f(Xi, Yj) - sum;
+        }
+
+    return F;
+}
+
+double Dirichlet_problem_solver::discrepancy_of_solution()
+{
+    double rs = 0;
+
+    double h2 = 1 / (x_step * x_step);
+    double k2 = 1 / (y_step * y_step);
+    double a2 = -2 * (h2 + k2);
+
+    auto F = fill_right_side();
+
+    for (int j = 1; j < m_y_partitions; j++)
+    {
+        for (int i = 1; i < n_x_partitions; i++)
+        {
+            double r {0};
+            double mult {1};
+
+            if (j != 1 && j != m_y_partitions - 1)
+            {
+                if (i != 1 && i != n_x_partitions - 1)
+                    mult = k2 * solution[i][j - 1] + h2 * solution[i - 1][j] + a2 * solution[i][j] + h2 * solution[i + 1][j] + k2 * solution[i][j + 1];
+                else if (i == 1)
+                    mult = k2 * solution[i][j - 1] + a2 * solution[i][j] + h2 * solution[i + 1][j] + k2 * solution[i][j + 1];
+                else if (i == n_x_partitions - 1)
+                    mult = k2 * solution[i][j - 1] + h2 * solution[i - 1][j] + a2 * solution[i][j] + k2 * solution[i][j + 1];
+            }
+            else if (j == 1)
+            {
+                if (i == 1)
+                    mult = a2 * solution[i][j] + h2 * solution[i + 1][j] + k2 * solution[i][j + 1];
+                else if (i != n_x_partitions - 1)
+                    mult = h2 * solution[i - 1][j] + a2 * solution[i][j] + h2 * solution[i + 1][j] + k2 * solution[i][j + 1];
+                else if (i == n_x_partitions - 1)
+                    mult = h2 * solution[i - 1][j] + a2 * solution[i][j] + k2 * solution[i][j + 1];
+            }
+            else if (j == m_y_partitions - 1)
+            {
+                if (i == 1)
+                    mult = k2 * solution[i][j - 1] + a2 * solution[i][j] + h2 * solution[i + 1][j];
+                else if (i != n_x_partitions - 1)
+                    mult = k2 * solution[i][j - 1] + h2 * solution[i - 1][j] + a2 * solution[i][j] + h2 * solution[i + 1][j];
+                else if (i == n_x_partitions - 1)
+                    mult = k2 * solution[i][j - 1] + h2 * solution[i - 1][j] + a2 * solution[i][j];
+            }
+
+            r = fabs(mult - F[i][j]);
+            rs += r * r;
+        }
+    }
+
+    return sqrt(rs);
 }
 
 void Dirichlet_problem_solver::solve() {
