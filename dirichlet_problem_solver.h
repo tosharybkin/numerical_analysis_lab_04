@@ -43,6 +43,6 @@ public:
     void print_solution();
     matrix fill_right_side();
     double discrepancy_of_solution();
-    void solve();
+    matrix solve();
 
 };
