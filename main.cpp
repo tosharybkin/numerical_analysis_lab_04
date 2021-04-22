@@ -9,9 +9,5 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
-    auto solver = Dirichlet_problem_solver(
-            4, 4, 10000, 1, 2, 2, 3, 1e-07
-            );
-    solver.solve();
     return a.exec();
 }

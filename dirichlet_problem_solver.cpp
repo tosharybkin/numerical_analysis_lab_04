@@ -248,9 +248,11 @@ double Dirichlet_problem_solver::discrepancy_of_solution()
     return sqrt(rs);
 }
 
-void Dirichlet_problem_solver::solve() {
+Dirichlet_problem_solver::matrix Dirichlet_problem_solver::solve() {
     fill_start_solution();
     calculate_tau();
     simple_iteration_method();
-    print_solution();
+    //print_solution();
+
+    return solution;
 }

@@ -12,6 +12,7 @@ Q_OBJECT
 
 public:
     MainWindow(QWidget *parent = nullptr);
+    void solve();
     ~MainWindow();
 
 private:
