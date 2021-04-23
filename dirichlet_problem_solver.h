@@ -15,10 +15,12 @@ private:
     double x_right_bound;
     double y_left_bound;
     double y_right_bound;
-    double eps_max;
     matrix solution;
 
 public:
+    double eps_max;
+    int total_iters;
+
     Dirichlet_problem_solver(
             uint m_y_partitions_,
             uint n_x_partitions_,

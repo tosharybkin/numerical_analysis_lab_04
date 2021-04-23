@@ -15,6 +15,7 @@ Dirichlet_problem_solver::Dirichlet_problem_solver(Dirichlet_problem_solver::uin
     m_y_partitions = m_y_partitions_;
     n_x_partitions = n_x_partitions_;
     max_iters = max_iters_;
+    total_iters = 0;
 
     x_left_bound = x_left_bound_;
     x_right_bound = x_right_bound_;
@@ -155,6 +156,8 @@ void Dirichlet_problem_solver::simple_iteration_method() {
         if ((eps_max < eps) || (iter >= max_iters))
             break;
     }
+
+    total_iters = iter;
 }
 
 void Dirichlet_problem_solver::print_solution() {

@@ -70,4 +70,7 @@ void MainWindow::solve() {
         row++;
     }
 
+    ui->step_num_lbl->setText(approx(solver.total_iters));
+    ui->accuracy_lbl->setText(approx(solver.discrepancy_of_solution()));
+
 }
