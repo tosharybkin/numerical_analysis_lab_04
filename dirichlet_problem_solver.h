@@ -8,7 +8,7 @@ class Dirichlet_problem_solver
     using matrix = std::vector<vec>;
 
 private:
-    uint m_y_partitions, n_x_partitions, max_iters;
+    int m_y_partitions, n_x_partitions, max_iters;
     double eps, tau;
     double x_step, y_step;
     double x_left_bound;
@@ -22,9 +22,9 @@ public:
     int total_iters;
 
     Dirichlet_problem_solver(
-            uint m_y_partitions_,
-            uint n_x_partitions_,
-            uint max_iters_,
+            int m_y_partitions_,
+            int n_x_partitions_,
+            int max_iters_,
             double x_left_bound_,
             double x_right_bound_,
             double y_left_bound_,

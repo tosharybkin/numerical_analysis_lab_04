@@ -9,7 +9,7 @@
 QString approx(double num)
 {
     std::ostringstream streamObj;
-    streamObj << std::scientific << num;
+    streamObj << num;
 
     return QString::fromStdString(streamObj.str());
 }

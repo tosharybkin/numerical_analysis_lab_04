@@ -2,13 +2,14 @@
 
 #include <cmath>
 #include <cstdio>
+#include <iostream>
 
 #define _USE_MATH_DEFINES
 #include <cmath>
 
-Dirichlet_problem_solver::Dirichlet_problem_solver(Dirichlet_problem_solver::uint m_y_partitions_,
-                                                   Dirichlet_problem_solver::uint n_x_partitions_,
-                                                   Dirichlet_problem_solver::uint max_iters_, double x_left_bound_,
+Dirichlet_problem_solver::Dirichlet_problem_solver(int m_y_partitions_,
+                                                   int n_x_partitions_,
+                                                   int max_iters_, double x_left_bound_,
                                                    double x_right_bound_, double y_left_bound_, double y_right_bound_,
                                                    double eps_)
 {
