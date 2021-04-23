@@ -9,7 +9,7 @@
 QString approx(double num)
 {
     std::ostringstream streamObj;
-    streamObj << std::scientific << num;
+    streamObj << num;
 
     return QString::fromStdString(streamObj.str());
 }
@@ -62,7 +62,7 @@ void MainWindow::solve() {
     {
         for (int i = 0; i <= m_y_partitions; i++)
         {
-            ui->out_table->setItem(row, column, new QTableWidgetItem(approx(solution[i][j])));
+            ui->out_table->setItem(row, column, new QTableWidgetItem(approx((*solution)[i][j])));
             column++;
             column %= (n_x_partitions + 1);
         }
@@ -71,6 +71,6 @@ void MainWindow::solve() {
     }
 
     ui->step_num_lbl->setText(approx(solver.total_iters));
-    ui->accuracy_lbl->setText(approx(solver.discrepancy_of_solution()));
+    ui->accuracy_lbl->setText(approx(solver.eps_max));
 
 }

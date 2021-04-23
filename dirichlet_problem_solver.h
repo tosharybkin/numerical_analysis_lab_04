@@ -8,23 +8,23 @@ class Dirichlet_problem_solver
     using matrix = std::vector<vec>;
 
 private:
-    uint m_y_partitions, n_x_partitions, max_iters;
+    int m_y_partitions, n_x_partitions, max_iters;
     double eps, tau;
     double x_step, y_step;
     double x_left_bound;
     double x_right_bound;
     double y_left_bound;
     double y_right_bound;
-    matrix solution;
+    matrix* solution;
 
 public:
     double eps_max;
     int total_iters;
 
     Dirichlet_problem_solver(
-            uint m_y_partitions_,
-            uint n_x_partitions_,
-            uint max_iters_,
+            int m_y_partitions_,
+            int n_x_partitions_,
+            int max_iters_,
             double x_left_bound_,
             double x_right_bound_,
             double y_left_bound_,
@@ -43,8 +43,8 @@ public:
     void calculate_tau();
     void simple_iteration_method();
     void print_solution();
-    matrix fill_right_side();
+    matrix* fill_right_side();
     double discrepancy_of_solution();
-    matrix solve();
+    matrix* solve();
 
 };
