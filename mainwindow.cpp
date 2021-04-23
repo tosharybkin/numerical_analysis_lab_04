@@ -62,7 +62,7 @@ void MainWindow::solve() {
     {
         for (int i = 0; i <= m_y_partitions; i++)
         {
-            ui->out_table->setItem(row, column, new QTableWidgetItem(approx(solution[i][j])));
+            ui->out_table->setItem(row, column, new QTableWidgetItem(approx((*solution)[i][j])));
             column++;
             column %= (n_x_partitions + 1);
         }

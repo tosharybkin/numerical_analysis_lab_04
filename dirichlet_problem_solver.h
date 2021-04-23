@@ -15,7 +15,7 @@ private:
     double x_right_bound;
     double y_left_bound;
     double y_right_bound;
-    matrix solution;
+    matrix* solution;
 
 public:
     double eps_max;
@@ -43,8 +43,8 @@ public:
     void calculate_tau();
     void simple_iteration_method();
     void print_solution();
-    matrix fill_right_side();
+    matrix* fill_right_side();
     double discrepancy_of_solution();
-    matrix solve();
+    matrix* solve();
 
 };
