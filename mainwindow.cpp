@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
         , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    connect(ui->calc_button, &QPushButton::clicked, this, &MainWindow::solve);
+    connect(ui->calc_button_main, &QPushButton::clicked, this, &MainWindow::solve);
 }
 
 MainWindow::~MainWindow()
@@ -28,10 +28,10 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::solve() {
-    auto n_x_partitions = ui->n_x_partitions_in->text().toInt();
-    auto m_y_partitions = ui->m_y_partitions_in->text().toInt();
-    auto accuracy = ui->accuracy_in->text().toDouble();
-    auto max_iters = ui->max_iters_in->text().toInt();
+    auto n_x_partitions = ui->n_x_partitions_in_main->text().toInt();
+    auto m_y_partitions = ui->m_y_partitions_in_main->text().toInt();
+    auto accuracy = ui->accuracy_in_main->text().toDouble();
+    auto max_iters = ui->max_iters_in_main->text().toInt();
 
     auto solver = Dirichlet_problem_solver(
             m_y_partitions,
@@ -42,19 +42,19 @@ void MainWindow::solve() {
     );
     auto solution = solver.solve();
 
-    for (int i = ui->out_table->rowCount(); i >= 0; --i) {
-        ui->out_table->removeRow(i);
+    for (int i = ui->out_table_main->rowCount(); i >= 0; --i) {
+        ui->out_table_main->removeRow(i);
     }
 
-    for (int i = ui->out_table->columnCount(); i >= 0; --i) {
-        ui->out_table->removeColumn(i);
+    for (int i = ui->out_table_main->columnCount(); i >= 0; --i) {
+        ui->out_table_main->removeColumn(i);
     }
 
     for (int j = 0; j < m_y_partitions + 1; ++j)
-        ui->out_table->insertRow(j);
+        ui->out_table_main->insertRow(j);
 
     for (int i = 0; i < m_y_partitions + 1; i++)
-        ui->out_table->insertColumn(i);
+        ui->out_table_main->insertColumn(i);
 
     int row = 0;
     int column = 0;
@@ -62,7 +62,7 @@ void MainWindow::solve() {
     {
         for (int i = 0; i <= m_y_partitions; i++)
         {
-            ui->out_table->setItem(row, column, new QTableWidgetItem(approx((*solution)[i][j])));
+            ui->out_table_main->setItem(row, column, new QTableWidgetItem(approx((*solution)[i][j])));
             column++;
             column %= (n_x_partitions + 1);
         }
@@ -70,7 +70,7 @@ void MainWindow::solve() {
         row++;
     }
 
-    ui->step_num_lbl->setText(approx(solver.total_iters));
-    ui->accuracy_lbl->setText(approx(solver.eps_max));
+    ui->step_num_lbl_main->setText(approx(solver.total_iters));
+    ui->accuracy_lbl_main->setText(approx(solver.eps_max));
 
 }
