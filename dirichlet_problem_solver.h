@@ -3,11 +3,12 @@
 
 class Dirichlet_problem_solver
 {
+public:
     using uint = unsigned int;
     using vec = std::vector<double>;
     using matrix = std::vector<vec>;
 
-private:
+protected:
     int m_y_partitions, n_x_partitions, max_iters;
     double eps, tau;
     double x_step, y_step;
@@ -16,6 +17,12 @@ private:
     double y_left_bound;
     double y_right_bound;
     matrix* solution;
+    matrix* solution_2;
+
+    void fill_start_solution();
+    void calculate_tau();
+    void simple_iteration_method();
+    matrix* fill_right_side();
 
 public:
     double eps_max;
@@ -30,21 +37,30 @@ public:
             double y_left_bound_,
             double y_right_bound_,
             double eps_
-            );
+        );
 
-    static double Uxy(double x, double y);
-    static double f(double x, double y);
-    static double M1(double y);
-    static double M2(double y);
-    static double M3(double x);
-    static double M4(double x);
+    virtual double Uxy(double x, double y) = 0;
+    virtual double f(double x, double y) = 0;
+    virtual double M1(double y) = 0;
+    virtual double M2(double y) = 0;
+    virtual double M3(double x) = 0;
+    virtual double M4(double x) = 0;
 
-    void fill_start_solution();
-    void calculate_tau();
-    void simple_iteration_method();
-    void print_solution();
-    matrix* fill_right_side();
     double discrepancy_of_solution();
     matrix* solve();
 
+};
+
+class Dirichlet_problem_solver_main_task : public  Dirichlet_problem_solver
+{
+public:
+    using Dirichlet_problem_solver::Dirichlet_problem_solver;
+
+protected:
+    virtual double Uxy(double x, double y) override;
+    virtual double f(double x, double y) override;
+    virtual double M1(double y) override;
+    virtual double M2(double y) override;
+    virtual double M3(double x) override;
+    virtual double M4(double x) override;
 };

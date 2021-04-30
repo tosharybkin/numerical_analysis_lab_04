@@ -32,43 +32,6 @@ Dirichlet_problem_solver::Dirichlet_problem_solver(int m_y_partitions_,
     solution = new matrix(m_y_partitions + 1, vec(n_x_partitions + 1, 0.0));
 }
 
-
-double Dirichlet_problem_solver::Uxy(double x, double y)
-{
-    return sin(M_PI * x * y);
-}
-
-
-double Dirichlet_problem_solver::f(double x, double y)
-{
-    return -exp(-1 * x * y * y);
-}
-
-
-double Dirichlet_problem_solver::M1(double y)
-{
-    return (y - 2) * (y - 3);
-}
-
-
-double Dirichlet_problem_solver::M2(double y)
-{
-    return (y - 2) * (y - 3) * y;
-}
-
-
-double Dirichlet_problem_solver::M3(double x)
-{
-    return (x - 1) * (x - 2);
-}
-
-
-double Dirichlet_problem_solver::M4(double x)
-{
-    return (x - 1) * (x - 2) * x;
-}
-
-
 void Dirichlet_problem_solver::fill_start_solution()
 {
     for (int j = 0; j <= m_y_partitions; j++) {
@@ -161,17 +124,6 @@ void Dirichlet_problem_solver::simple_iteration_method() {
     total_iters = iter;
 }
 
-void Dirichlet_problem_solver::print_solution() {
-    for (int j = m_y_partitions; j >= 0; j--)
-    {
-        for (int i = 0; i <= m_y_partitions; i++)
-            printf("%5.3lf   ", (*solution)[i][j]);
-        printf("\n");
-    }
-
-    printf("%5.16lf   ", discrepancy_of_solution());
-}
-
 Dirichlet_problem_solver::matrix* Dirichlet_problem_solver::fill_right_side()
 {
     auto F = new matrix(m_y_partitions + 1, vec(n_x_partitions + 1, 0.0));
@@ -256,7 +208,45 @@ Dirichlet_problem_solver::matrix* Dirichlet_problem_solver::solve() {
     fill_start_solution();
     calculate_tau();
     simple_iteration_method();
-    //print_solution();
+
 
     return solution;
+}
+
+
+
+
+double Dirichlet_problem_solver_main_task::Uxy(double x, double y)
+{
+    return sin(M_PI * x * y);
+}
+
+
+double Dirichlet_problem_solver_main_task::f(double x, double y)
+{
+    return -exp(-1 * x * y * y);
+}
+
+
+double Dirichlet_problem_solver_main_task::M1(double y)
+{
+    return (y - 2) * (y - 3);
+}
+
+
+double Dirichlet_problem_solver_main_task::M2(double y)
+{
+    return (y - 2) * (y - 3) * y;
+}
+
+
+double Dirichlet_problem_solver_main_task::M3(double x)
+{
+    return (x - 1) * (x - 2);
+}
+
+
+double Dirichlet_problem_solver_main_task::M4(double x)
+{
+    return (x - 1) * (x - 2) * x;
 }
