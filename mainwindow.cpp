@@ -21,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     connect(ui->calc_button_main, &QPushButton::clicked, this, &MainWindow::solve);
+    connect(ui->calc_button_test, &QPushButton::clicked, this, &MainWindow::solve_test_task);
 }
 
 MainWindow::~MainWindow()
@@ -113,4 +114,30 @@ void MainWindow::solve() {
     ui->step_num_lbl_main->setText(approx(solver.total_iters));
     ui->accuracy_lbl_main->setText(approx(solver.eps_max));
 
+}
+
+void MainWindow::solve_test_task() {
+    auto n_x_partitions = ui->n_x_partitions_in_test->text().toInt();
+    auto m_y_partitions = ui->m_y_partitions_in_test->text().toInt();
+    auto accuracy = ui->accuracy_in_test->text().toDouble();
+    auto max_iters = ui->max_iters_in_test->text().toInt();
+
+    auto solver = Dirichlet_problem_solver_test_task(
+            m_y_partitions,
+            n_x_partitions,
+            max_iters,
+            1, 2, 2, 3,
+            accuracy
+    );
+    auto solution = solver.solve();
+
+    clear_table(ui->out_table_test);
+    fill_table(ui->out_table_test, m_y_partitions, n_x_partitions, solution);
+
+    ui->accuracy_lbl_test->setText(approx(solver.eps_max));
+    ui->step_num_lbl_test->setText(approx(solver.total_iters));
+    ui->test_accurac_lbl_test->setText(approx(solver.check_num_solution()));
+
+    clear_table(ui->out_table_2_test);
+    fill_table(ui->out_table_2_test, m_y_partitions, n_x_partitions, solver.analytic_solution);
 }

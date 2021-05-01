@@ -20,6 +20,7 @@ public:
                     int n_x_partitions,
                     Dirichlet_problem_solver::matrix* matrix);
     void solve();
+    void solve_test_task();
     ~MainWindow();
 
 private:
