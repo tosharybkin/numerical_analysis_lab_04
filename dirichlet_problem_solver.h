@@ -67,10 +67,13 @@ protected:
 class Dirichlet_problem_solver_test_task : public  Dirichlet_problem_solver
 {
 public:
+    matrix* analytic_solution;
+
     using Dirichlet_problem_solver::Dirichlet_problem_solver;
     double check_num_solution();
 
 protected:
+    void fill_analytic_solution();
     virtual double Uxy(double x, double y) override;
     virtual double f(double x, double y) override;
     virtual double M1(double y) override;
