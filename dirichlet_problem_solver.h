@@ -17,7 +17,6 @@ protected:
     double y_left_bound;
     double y_right_bound;
     matrix* solution;
-    matrix* solution_2;
 
     void fill_start_solution();
     void calculate_tau();
