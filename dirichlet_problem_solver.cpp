@@ -284,3 +284,29 @@ double Dirichlet_problem_solver_test_task::M4(double x)
 {
     return -M_PI * M_PI * sin(M_PI * x * 3) * (x * x + 9);
 }
+
+double Dirichlet_problem_solver_test_task::check_num_solution() {
+    auto analytic_solution = new matrix(m_y_partitions + 1, vec(n_x_partitions + 1, 0.0));
+    double zs = 0;
+
+    for (int j = 0; j <= m_y_partitions; j++)
+        for (int i = 0; i <= n_x_partitions; i++)
+        {
+            double Xi, Yj;
+            Xi = x_left_bound + i * x_step;
+            Yj = y_left_bound + j * y_step;
+
+            (*analytic_solution)[i][j] = Uxy(Xi, Yj);
+        }
+
+    for (int j = 1; j < m_y_partitions; j++)
+        for (int i = 1; i < n_x_partitions; i++)
+        {
+            double z = fabs((*analytic_solution)[i][j] - (*solution)[i][j]);
+
+            if (z > zs)
+                zs = z;
+        }
+
+    return zs;
+}

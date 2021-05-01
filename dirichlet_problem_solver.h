@@ -76,4 +76,5 @@ protected:
     virtual double M2(double y) override;
     virtual double M3(double x) override;
     virtual double M4(double x) override;
+    double check_num_solution();
 };
