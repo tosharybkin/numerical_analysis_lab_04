@@ -42,16 +42,16 @@ void Dirichlet_problem_solver::fill_start_solution()
                 Yj = y_left_bound + j * y_step;
 
                 if (j == 0)
-                    (*solution)[i][j] = M3(Xi);
+                    (*solution)[j][i] = M3(Xi);
                 else if (j == m_y_partitions)
-                    (*solution)[i][j] = M4(Xi);
+                    (*solution)[j][i] = M4(Xi);
 
                 if (i == 0)
-                    (*solution)[i][j] = M1(Yj);
+                    (*solution)[j][i] = M1(Yj);
                 else if (i == n_x_partitions)
-                    (*solution)[i][j] = M2(Yj);
+                    (*solution)[j][i] = M2(Yj);
             } else
-                (*solution)[i][j] = 0.0;
+                (*solution)[j][i] = 0.0;
         }
     }
 }
@@ -100,10 +100,10 @@ void Dirichlet_problem_solver::simple_iteration_method() {
                 Xi = x_left_bound + i * x_step;
                 Yj = y_left_bound + j * y_step;
 
-                v_old = (*solution)[i][j];
+                v_old = (*solution)[j][i];
                 v_new = v_old + tau * (
-                        h2 * ((*solution)[i - 1][j] + (*solution)[i + 1][j])
-                        + k2 * ((*solution)[i][j - 1] + (*solution)[i][j + 1])
+                        h2 * ((*solution)[j - 1][i] + (*solution)[j + 1][i])
+                        + k2 * ((*solution)[j][i - 1] + (*solution)[j][i + 1])
                         + a2 * v_old
                         + f(Xi, Yj)
                         );
@@ -114,7 +114,7 @@ void Dirichlet_problem_solver::simple_iteration_method() {
                 if (eps_cur > eps_max)
                     eps_max = eps_cur;
 
-                (*solution)[i][j] = v_new;
+                (*solution)[j][i] = v_new;
             }
 
         if ((eps_max < eps) || (iter >= max_iters))
@@ -145,7 +145,7 @@ Dirichlet_problem_solver::matrix* Dirichlet_problem_solver::fill_right_side()
             else if (i == n_x_partitions - 1)
                 sum += (1 / (x_step * x_step)) * M2(Yj);
 
-            (*F)[i][j] = -f(Xi, Yj) - sum;
+            (*F)[j][i] = -f(Xi, Yj) - sum;
         }
 
     return F;
@@ -171,32 +171,32 @@ double Dirichlet_problem_solver::discrepancy_of_solution()
             if (j != 1 && j != m_y_partitions - 1)
             {
                 if (i != 1 && i != n_x_partitions - 1)
-                    mult = k2 * (*solution)[i][j - 1] + h2 * (*solution)[i - 1][j] + a2 * (*solution)[i][j] + h2 * (*solution)[i + 1][j] + k2 * (*solution)[i][j + 1];
+                    mult = k2 * (*solution)[j][i - 1] + h2 * (*solution)[j - 1][i] + a2 * (*solution)[j][i] + h2 * (*solution)[j + 1][i] + k2 * (*solution)[j][i + 1];
                 else if (i == 1)
-                    mult = k2 * (*solution)[i][j - 1] + a2 * (*solution)[i][j] + h2 * (*solution)[i + 1][j] + k2 * (*solution)[i][j + 1];
+                    mult = k2 * (*solution)[j][i - 1] + a2 * (*solution)[j][i] + h2 * (*solution)[j + 1][i] + k2 * (*solution)[j][i + 1];
                 else if (i == n_x_partitions - 1)
-                    mult = k2 * (*solution)[i][j - 1] + h2 * (*solution)[i - 1][j] + a2 * (*solution)[i][j] + k2 * (*solution)[i][j + 1];
+                    mult = k2 * (*solution)[j][i - 1] + h2 * (*solution)[j - 1][i] + a2 * (*solution)[j][i] + k2 * (*solution)[j][i + 1];
             }
             else if (j == 1)
             {
                 if (i == 1)
-                    mult = a2 * (*solution)[i][j] + h2 * (*solution)[i + 1][j] + k2 * (*solution)[i][j + 1];
+                    mult = a2 * (*solution)[j][i] + h2 * (*solution)[j + 1][i] + k2 * (*solution)[j][i + 1];
                 else if (i != n_x_partitions - 1)
-                    mult = h2 * (*solution)[i - 1][j] + a2 * (*solution)[i][j] + h2 * (*solution)[i + 1][j] + k2 * (*solution)[i][j + 1];
+                    mult = h2 * (*solution)[j - 1][i] + a2 * (*solution)[j][i] + h2 * (*solution)[j + 1][i] + k2 * (*solution)[j][i + 1];
                 else if (i == n_x_partitions - 1)
-                    mult = h2 * (*solution)[i - 1][j] + a2 * (*solution)[i][j] + k2 * (*solution)[i][j + 1];
+                    mult = h2 * (*solution)[j - 1][i] + a2 * (*solution)[j][i] + k2 * (*solution)[j][i + 1];
             }
             else if (j == m_y_partitions - 1)
             {
                 if (i == 1)
-                    mult = k2 * (*solution)[i][j - 1] + a2 * (*solution)[i][j] + h2 * (*solution)[i + 1][j];
+                    mult = k2 * (*solution)[j][i - 1] + a2 * (*solution)[j][i] + h2 * (*solution)[j + 1][i];
                 else if (i != n_x_partitions - 1)
-                    mult = k2 * (*solution)[i][j - 1] + h2 * (*solution)[i - 1][j] + a2 * (*solution)[i][j] + h2 * (*solution)[i + 1][j];
+                    mult = k2 * (*solution)[j][i - 1] + h2 * (*solution)[j - 1][i] + a2 * (*solution)[j][i] + h2 * (*solution)[j + 1][i];
                 else if (i == n_x_partitions - 1)
-                    mult = k2 * (*solution)[i][j - 1] + h2 * (*solution)[i - 1][j] + a2 * (*solution)[i][j];
+                    mult = k2 * (*solution)[j][i - 1] + h2 * (*solution)[j - 1][i] + a2 * (*solution)[j][i];
             }
 
-            r = fabs(mult - (*F)[i][j]);
+            r = fabs(mult - (*F)[j][i]);
             rs += r * r;
         }
     }

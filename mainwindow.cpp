@@ -57,7 +57,7 @@ void MainWindow::fill_table(QTableWidget *table,
     {
         for (int i = 0; i <= m_y_partitions; i++)
         {
-            table->setItem(row, column, new QTableWidgetItem(approx((*matrix)[i][j])));
+            table->setItem(row, column, new QTableWidgetItem(approx((*matrix)[j][i])));
             column++;
             column %= (n_x_partitions + 1);
         }
@@ -103,7 +103,7 @@ void MainWindow::solve() {
     {
         for (int i = 0; i <= n_x_partitions; i++)
         {
-            curr_accuracy = abs((*solution_double)[2 * i][2 * j] - (*solution)[i][j]);
+            curr_accuracy = abs((*solution_double)[2 * j][2 * i] - (*solution)[j][i]);
             if (curr_accuracy > max_accuracy)
                 max_accuracy = curr_accuracy;
         }
