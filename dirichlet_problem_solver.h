@@ -63,3 +63,17 @@ protected:
     virtual double M3(double x) override;
     virtual double M4(double x) override;
 };
+
+class Dirichlet_problem_solver_test_task : public  Dirichlet_problem_solver
+{
+public:
+    using Dirichlet_problem_solver::Dirichlet_problem_solver;
+
+protected:
+    virtual double Uxy(double x, double y) override;
+    virtual double f(double x, double y) override;
+    virtual double M1(double y) override;
+    virtual double M2(double y) override;
+    virtual double M3(double x) override;
+    virtual double M4(double x) override;
+};

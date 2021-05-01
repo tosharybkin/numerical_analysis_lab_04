@@ -247,3 +247,40 @@ double Dirichlet_problem_solver_main_task::M4(double x)
 {
     return (x - 1) * (x - 2) * x;
 }
+
+
+//
+// Dirichlet_problem_solver_test_task
+//
+
+
+double Dirichlet_problem_solver_test_task::Uxy(double x, double y) {
+    return sin(M_PI * x * y);
+}
+
+double Dirichlet_problem_solver_test_task::f(double x, double y) {
+    return -M_PI * M_PI * sin(M_PI * x * y) * (x * x + y * y);
+}
+
+double Dirichlet_problem_solver_test_task::M1(double y)
+{
+    return -M_PI * M_PI * sin(M_PI * y) * (1 + y * y);
+}
+
+
+double Dirichlet_problem_solver_test_task::M2(double y)
+{
+    return -M_PI * M_PI * sin(M_PI * 2 * y) * (4 + y * y);
+}
+
+
+double Dirichlet_problem_solver_test_task::M3(double x)
+{
+    return -M_PI * M_PI * sin(M_PI * x * 2) * (x * x + 4);
+}
+
+
+double Dirichlet_problem_solver_test_task::M4(double x)
+{
+    return -M_PI * M_PI * sin(M_PI * x * 3) * (x * x + 9);
+}
