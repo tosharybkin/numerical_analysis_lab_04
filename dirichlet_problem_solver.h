@@ -68,6 +68,7 @@ class Dirichlet_problem_solver_test_task : public  Dirichlet_problem_solver
 {
 public:
     using Dirichlet_problem_solver::Dirichlet_problem_solver;
+    double check_num_solution();
 
 protected:
     virtual double Uxy(double x, double y) override;
@@ -76,5 +77,4 @@ protected:
     virtual double M2(double y) override;
     virtual double M3(double x) override;
     virtual double M4(double x) override;
-    double check_num_solution();
 };
