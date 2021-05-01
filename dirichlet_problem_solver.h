@@ -56,7 +56,7 @@ public:
     using Dirichlet_problem_solver::Dirichlet_problem_solver;
 
 protected:
-    virtual double Uxy(double x, double y) override;
+    virtual double Uxy(double x, double y) override {return 0;};
     virtual double f(double x, double y) override;
     virtual double M1(double y) override;
     virtual double M2(double y) override;

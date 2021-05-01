@@ -214,12 +214,9 @@ Dirichlet_problem_solver::matrix* Dirichlet_problem_solver::solve() {
 }
 
 
-
-
-double Dirichlet_problem_solver_main_task::Uxy(double x, double y)
-{
-    return sin(M_PI * x * y);
-}
+//
+// Dirichlet_problem_solver_main_task
+//
 
 
 double Dirichlet_problem_solver_main_task::f(double x, double y)
