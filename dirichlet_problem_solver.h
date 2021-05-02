@@ -17,7 +17,6 @@ protected:
     double y_left_bound;
     double y_right_bound;
     matrix* solution;
-    matrix* solution_2;
 
     void fill_start_solution();
     void calculate_tau();
@@ -57,6 +56,24 @@ public:
     using Dirichlet_problem_solver::Dirichlet_problem_solver;
 
 protected:
+    virtual double Uxy(double x, double y) override {return 0;};
+    virtual double f(double x, double y) override;
+    virtual double M1(double y) override;
+    virtual double M2(double y) override;
+    virtual double M3(double x) override;
+    virtual double M4(double x) override;
+};
+
+class Dirichlet_problem_solver_test_task : public  Dirichlet_problem_solver
+{
+public:
+    matrix* analytic_solution;
+
+    using Dirichlet_problem_solver::Dirichlet_problem_solver;
+    double check_num_solution();
+
+protected:
+    void fill_analytic_solution();
     virtual double Uxy(double x, double y) override;
     virtual double f(double x, double y) override;
     virtual double M1(double y) override;

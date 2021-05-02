@@ -21,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     connect(ui->calc_button_main, &QPushButton::clicked, this, &MainWindow::solve);
+    connect(ui->calc_button_test, &QPushButton::clicked, this, &MainWindow::solve_test_task);
 }
 
 MainWindow::~MainWindow()
@@ -47,16 +48,16 @@ void MainWindow::fill_table(QTableWidget *table,
     for (int j = 0; j < m_y_partitions + 1; ++j)
         table->insertRow(j);
 
-    for (int i = 0; i < m_y_partitions + 1; i++)
+    for (int i = 0; i < n_x_partitions + 1; i++)
         table->insertColumn(i);
 
     int row = 0;
     int column = 0;
     for (int j = m_y_partitions; j >= 0; j--)
     {
-        for (int i = 0; i <= m_y_partitions; i++)
+        for (int i = 0; i <= n_x_partitions; i++)
         {
-            table->setItem(row, column, new QTableWidgetItem(approx((*matrix)[i][j])));
+            table->setItem(row, column, new QTableWidgetItem(approx((*matrix)[j][i])));
             column++;
             column %= (n_x_partitions + 1);
         }
@@ -102,7 +103,7 @@ void MainWindow::solve() {
     {
         for (int i = 0; i <= n_x_partitions; i++)
         {
-            curr_accuracy = abs((*solution_double)[2 * i][2 * j] - (*solution)[i][j]);
+            curr_accuracy = abs((*solution_double)[2 * j][2 * i] - (*solution)[j][i]);
             if (curr_accuracy > max_accuracy)
                 max_accuracy = curr_accuracy;
         }
@@ -113,4 +114,30 @@ void MainWindow::solve() {
     ui->step_num_lbl_main->setText(approx(solver.total_iters));
     ui->accuracy_lbl_main->setText(approx(solver.eps_max));
 
+}
+
+void MainWindow::solve_test_task() {
+    auto n_x_partitions = ui->n_x_partitions_in_test->text().toInt();
+    auto m_y_partitions = ui->m_y_partitions_in_test->text().toInt();
+    auto accuracy = ui->accuracy_in_test->text().toDouble();
+    auto max_iters = ui->max_iters_in_test->text().toInt();
+
+    auto solver = Dirichlet_problem_solver_test_task(
+            m_y_partitions,
+            n_x_partitions,
+            max_iters,
+            1, 2, 2, 3,
+            accuracy
+    );
+    auto solution = solver.solve();
+
+    clear_table(ui->out_table_test);
+    fill_table(ui->out_table_test, m_y_partitions, n_x_partitions, solution);
+
+    ui->accuracy_lbl_test->setText(approx(solver.eps_max));
+    ui->step_num_lbl_test->setText(approx(solver.total_iters));
+    ui->test_accurac_lbl_test->setText(approx(solver.check_num_solution()));
+
+    clear_table(ui->out_table_2_test);
+    fill_table(ui->out_table_2_test, m_y_partitions, n_x_partitions, solver.analytic_solution);
 }
