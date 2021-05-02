@@ -48,14 +48,14 @@ void MainWindow::fill_table(QTableWidget *table,
     for (int j = 0; j < m_y_partitions + 1; ++j)
         table->insertRow(j);
 
-    for (int i = 0; i < m_y_partitions + 1; i++)
+    for (int i = 0; i < n_x_partitions + 1; i++)
         table->insertColumn(i);
 
     int row = 0;
     int column = 0;
     for (int j = m_y_partitions; j >= 0; j--)
     {
-        for (int i = 0; i <= m_y_partitions; i++)
+        for (int i = 0; i <= n_x_partitions; i++)
         {
             table->setItem(row, column, new QTableWidgetItem(approx((*matrix)[j][i])));
             column++;

@@ -295,7 +295,7 @@ void Dirichlet_problem_solver_test_task::fill_analytic_solution() {
             Xi = x_left_bound + i * x_step;
             Yj = y_left_bound + j * y_step;
 
-            (*analytic_solution)[i][j] = Uxy(Xi, Yj);
+            (*analytic_solution)[j][i] = Uxy(Xi, Yj);
         }
 }
 
