@@ -306,7 +306,7 @@ double Dirichlet_problem_solver_test_task::check_num_solution() {
     for (int j = 1; j < m_y_partitions; j++)
         for (int i = 1; i < n_x_partitions; i++)
         {
-            double z = fabs((*analytic_solution)[i][j] - (*solution)[i][j]);
+            double z = fabs((*analytic_solution)[j][i] - (*solution)[j][i]);
 
             if (z > zs)
                 zs = z;
