@@ -102,8 +102,8 @@ void Dirichlet_problem_solver::simple_iteration_method() {
 
                 v_old = (*solution)[j][i];
                 v_new = v_old + tau * (
-                        h2 * ((*solution)[j - 1][i] + (*solution)[j + 1][i])
-                        + k2 * ((*solution)[j][i - 1] + (*solution)[j][i + 1])
+                        k2 * ((*solution)[j - 1][i] + (*solution)[j + 1][i])
+                        + h2 * ((*solution)[j][i - 1] + (*solution)[j][i + 1])
                         + a2 * v_old
                         + f(Xi, Yj)
                         );
