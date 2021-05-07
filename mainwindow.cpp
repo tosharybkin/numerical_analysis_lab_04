@@ -109,8 +109,7 @@ void MainWindow::solve() {
         }
     }
 
-    std::cout << std::scientific << max_accuracy << std::endl;
-
+    ui->test_accurac_lbl_main->setText(approx(max_accuracy));
     ui->step_num_lbl_main->setText(approx(solver.total_iters));
     ui->accuracy_lbl_main->setText(approx(solver.eps_max));
 
