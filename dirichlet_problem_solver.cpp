@@ -1,6 +1,5 @@
 #include "dirichlet_problem_solver.h"
 
-#include <cmath>
 #include <cstdio>
 #include <iostream>
 
