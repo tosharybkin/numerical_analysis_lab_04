@@ -4,7 +4,6 @@
 class Dirichlet_problem_solver
 {
 public:
-    using uint = unsigned int;
     using vec = std::vector<double>;
     using matrix = std::vector<vec>;
 
