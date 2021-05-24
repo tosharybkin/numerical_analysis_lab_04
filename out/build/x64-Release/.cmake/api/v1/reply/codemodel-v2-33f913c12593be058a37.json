@@ -1,0 +1,77 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.19"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "num_an_lab_04",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "num_an_lab_04::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-num_an_lab_04-RelWithDebInfo-ef7cbdd4b26c43063343.json",
+					"name" : "num_an_lab_04",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "num_an_lab_04_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-num_an_lab_04_autogen-RelWithDebInfo-91990946f14f5d2e39fb.json",
+					"name" : "num_an_lab_04_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "num_an_lab_04_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-num_an_lab_04_autogen_timestamp_deps-RelWithDebInfo-90a021e14fb98eaaa4ec.json",
+					"name" : "num_an_lab_04_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/dev/numerical_analysis_lab_04/out/build/x64-Release",
+		"source" : "D:/dev/numerical_analysis_lab_04"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}

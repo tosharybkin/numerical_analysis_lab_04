@@ -1,0 +1,23 @@
+# ninja log v5
+7	206	6434927848046612	num_an_lab_04_autogen/timestamp	cab242042c3bb603
+225	1453	6434868810996779	CMakeFiles/num_an_lab_04.dir/dirichlet_problem_solver.cpp.obj	506894782a37d723
+1835	2725	6434928264846757	num_an_lab_04.exe	73574b467a1eff7c
+206	1682	6434927862630899	CMakeFiles/num_an_lab_04.dir/num_an_lab_04_autogen/mocs_compilation.cpp.obj	46ee5b4a2b7e9ec6
+228	2402	6434868820898152	CMakeFiles/num_an_lab_04.dir/main.cpp.obj	b118769923610a6d
+11	1835	6434928256967295	CMakeFiles/num_an_lab_04.dir/mainwindow.cpp.obj	fd1dcf0a2df2ecbd
+1	564	6435452723422447	build.ninja	9a25225cf549039d
+342	4078	6435452853875112	CMakeFiles/num_an_lab_04.dir/mainwindow.cpp.obj	fd1dcf0a2df2ecbd
+4079	5237	6435452864596484	num_an_lab_04.exe	73574b467a1eff7c
+21	1565	6435477195258851	CMakeFiles/num_an_lab_04.dir/dirichlet_problem_solver.cpp.obj	506894782a37d723
+1566	2887	6435477207399712	num_an_lab_04.exe	73574b467a1eff7c
+4	979	6435483393105213	CMakeFiles/num_an_lab_04.dir/dirichlet_problem_solver.cpp.obj	506894782a37d723
+980	2782	6435483410089730	num_an_lab_04.exe	73574b467a1eff7c
+6	808	6435486528715319	CMakeFiles/num_an_lab_04.dir/dirichlet_problem_solver.cpp.obj	506894782a37d723
+11	3473	6435486555257380	CMakeFiles/num_an_lab_04.dir/mainwindow.cpp.obj	fd1dcf0a2df2ecbd
+3473	4953	6435486568486191	num_an_lab_04.exe	73574b467a1eff7c
+16	1298	6435487755493092	CMakeFiles/num_an_lab_04.dir/dirichlet_problem_solver.cpp.obj	506894782a37d723
+1298	1832	6435487759610281	num_an_lab_04.exe	73574b467a1eff7c
+9	1625	6435503638158547	CMakeFiles/num_an_lab_04.dir/dirichlet_problem_solver.cpp.obj	506894782a37d723
+1625	2000	6435503640878632	num_an_lab_04.exe	73574b467a1eff7c
+8	903	6435504510888726	CMakeFiles/num_an_lab_04.dir/dirichlet_problem_solver.cpp.obj	506894782a37d723
+903	1193	6435504512962617	num_an_lab_04.exe	73574b467a1eff7c
