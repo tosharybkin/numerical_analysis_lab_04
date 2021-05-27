@@ -15,6 +15,7 @@ protected:
     double x_right_bound;
     double y_left_bound;
     double y_right_bound;
+    int k;
     matrix* solution;
 
     void fill_start_solution();
@@ -34,7 +35,8 @@ public:
             double x_right_bound_,
             double y_left_bound_,
             double y_right_bound_,
-            double eps_
+            double eps_,
+            int k_
         );
 
     virtual double Uxy(double x, double y) = 0;

@@ -85,13 +85,15 @@ void MainWindow::solve() {
     auto m_y_partitions = ui->m_y_partitions_in_main->text().toInt();
     auto accuracy = ui->accuracy_in_main->text().toDouble();
     auto max_iters = ui->max_iters_in_main->text().toInt();
+    auto k = ui->k_in_main->text().toInt();
 
     auto solver = Dirichlet_problem_solver_main_task(
             m_y_partitions,
             n_x_partitions,
             max_iters,
             1, 2, 2, 3,
-            accuracy
+            accuracy,
+            k
     );
     auto solution = solver.solve();
 
@@ -103,7 +105,8 @@ void MainWindow::solve() {
             n_x_partitions * 2,
             max_iters,
             1, 2, 2, 3,
-            accuracy
+            accuracy,
+            k
     );
     auto solution_double = solver_double.solve();
 
@@ -151,13 +154,15 @@ void MainWindow::solve_test_task() {
     auto m_y_partitions = ui->m_y_partitions_in_test->text().toInt();
     auto accuracy = ui->accuracy_in_test->text().toDouble();
     auto max_iters = ui->max_iters_in_test->text().toInt();
+    auto k = ui->k_in_test->text().toInt();
 
     auto solver = Dirichlet_problem_solver_test_task(
             m_y_partitions,
             n_x_partitions,
             max_iters,
             1, 2, 2, 3,
-            accuracy
+            accuracy,
+            k
     );
     auto solution = solver.solve();
 

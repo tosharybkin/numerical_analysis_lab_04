@@ -12,12 +12,13 @@ Dirichlet_problem_solver::Dirichlet_problem_solver(int m_y_partitions_,
                                                    int n_x_partitions_,
                                                    int max_iters_, double x_left_bound_,
                                                    double x_right_bound_, double y_left_bound_, double y_right_bound_,
-                                                   double eps_)
+                                                   double eps_, int k_)
 {
     m_y_partitions = m_y_partitions_;
     n_x_partitions = n_x_partitions_;
     max_iters = max_iters_;
     total_iters = 0;
+    k = k_;
 
     x_left_bound = x_left_bound_;
     x_right_bound = x_right_bound_;
@@ -86,7 +87,6 @@ void Dirichlet_problem_solver::simple_iteration_method() {
     double k2 = 1 / (y_step * y_step);
     double a2 = -2 * (h2 + k2);
     int iter = 0;
-    int k = 8;
     auto taus = new vec(k, 0.0);
     auto solution_old = new matrix(m_y_partitions + 1, vec(n_x_partitions + 1, 0.0));
     auto k_solution = new matrix(m_y_partitions + 1, vec(n_x_partitions + 1, 0.0));
