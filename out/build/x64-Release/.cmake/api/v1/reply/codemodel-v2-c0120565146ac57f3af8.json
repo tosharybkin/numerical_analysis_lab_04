@@ -42,7 +42,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "num_an_lab_04::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-num_an_lab_04-RelWithDebInfo-ef7cbdd4b26c43063343.json",
+					"jsonFile" : "target-num_an_lab_04-RelWithDebInfo-37a88af585135bdfd98f.json",
 					"name" : "num_an_lab_04",
 					"projectIndex" : 0
 				},
@@ -66,8 +66,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/dev/numerical_analysis_lab_04/out/build/x64-Release",
-		"source" : "D:/dev/numerical_analysis_lab_04"
+		"build" : "C:/Users/Anton/Desktop/LABS/numerical_analysis_lab_04/out/build/x64-Release",
+		"source" : "C:/Users/Anton/Desktop/LABS/numerical_analysis_lab_04"
 	},
 	"version" : 
 	{

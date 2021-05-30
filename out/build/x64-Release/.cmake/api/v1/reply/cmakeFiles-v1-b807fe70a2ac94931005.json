@@ -127,35 +127,35 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5/Qt5ConfigVersion.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5/Qt5ConfigVersion.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5/Qt5Config.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5/Qt5Config.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5/Qt5ModuleLocation.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5/Qt5ModuleLocation.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -164,99 +164,99 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsIntegrationPlugin.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsIntegrationPlugin.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Widgets/Qt5Widgets_QWindowsVistaStylePlugin.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Widgets/Qt5Widgets_QWindowsVistaStylePlugin.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake"
+			"path" : "D:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -267,8 +267,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "D:/dev/numerical_analysis_lab_04/out/build/x64-Release",
-		"source" : "D:/dev/numerical_analysis_lab_04"
+		"build" : "C:/Users/Anton/Desktop/LABS/numerical_analysis_lab_04/out/build/x64-Release",
+		"source" : "C:/Users/Anton/Desktop/LABS/numerical_analysis_lab_04"
 	},
 	"version" : 
 	{

@@ -89,7 +89,6 @@ void Dirichlet_problem_solver::simple_iteration_method() {
     int iter = 0;
     auto taus = new vec(k, 0.0);
     auto solution_old = new matrix(m_y_partitions + 1, vec(n_x_partitions + 1, 0.0));
-    auto k_solution = new matrix(m_y_partitions + 1, vec(n_x_partitions + 1, 0.0));
 
     double v_old, v_new;
     double eig_val_max;
@@ -114,18 +113,18 @@ void Dirichlet_problem_solver::simple_iteration_method() {
         (*taus)[i] = 1.0 / (((eig_val_max + eig_val_min) / (2.0)) + ((eig_val_max - eig_val_min) / (2.0)) * (cos(((M_PI) * (1.0 + 2.0 * i)) / (2.0 * k))));;
     }
 
-    for (int j = 0; j <= m_y_partitions; j++)
-        for (int i = 0; i <= n_x_partitions; i++)
-            (*k_solution)[j][i] = 0;
-
     while (true)
     {
-        iter++;
-        eps_max = 0;
 
         for (int j = 0; j <= m_y_partitions; j++)
             for (int i = 0; i <= n_x_partitions; i++)
                 (*solution_old)[j][i] = (*solution)[j][i];
+
+        iter++;
+        eps_max = 0;
+        
+        if ((iter >= max_iters))
+            break;
 
         for (int j = 1; j < m_y_partitions; j++)
         {
@@ -136,6 +135,7 @@ void Dirichlet_problem_solver::simple_iteration_method() {
                 Yj = y_left_bound + j * y_step;
 
                 v_old = (*solution_old)[j][i];
+
                 v_new = v_old + (*taus)[(iter - 1) % k] * (
                     k2 * ((*solution_old)[j - 1][i] + (*solution_old)[j + 1][i])
                     + h2 * ((*solution_old)[j][i - 1] + (*solution_old)[j][i + 1])
@@ -146,22 +146,16 @@ void Dirichlet_problem_solver::simple_iteration_method() {
 
                 eps_cur = std::abs(v_old - v_new);
 
-                if ((eps_cur > eps_max) || (iter >= max_iters))
+                if ((eps_cur > eps_max))
                     eps_max = eps_cur;
 
                 (*solution)[j][i] = v_new;
             }
         }
 
-        if ((iter - 1) % k == 0)
-        {
-            *k_solution = *solution;
-        }
-
-        if ((eps_max < eps) || (iter >= max_iters))
+        if ((eps_max < eps))
             break;
     }
-
     total_iters = iter;
 }
 

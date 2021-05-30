@@ -35,15 +35,17 @@ public:
     QGridLayout *gridLayout_4;
     QGroupBox *groupBox;
     QGridLayout *gridLayout_2;
-    QLabel *label_3;
-    QPushButton *calc_button_main;
-    QLineEdit *max_iters_in_main;
-    QLabel *label_4;
     QLabel *label;
+    QLineEdit *k_in_main;
     QLineEdit *accuracy_in_main;
-    QLineEdit *n_x_partitions_in_main;
+    QLabel *label_3;
+    QLineEdit *max_iters_in_main;
     QLineEdit *m_y_partitions_in_main;
+    QPushButton *calc_button_main;
+    QLabel *label_4;
+    QLineEdit *n_x_partitions_in_main;
     QLabel *label_2;
+    QLabel *label_5;
     QSpacerItem *horizontalSpacer;
     QTableWidget *out_table_2_main;
     QTableWidget *out_table_main;
@@ -61,15 +63,17 @@ public:
     QGridLayout *gridLayout_7;
     QGroupBox *groupBox_3;
     QGridLayout *gridLayout_5;
-    QLabel *label_7;
-    QLineEdit *accuracy_in_test;
-    QLineEdit *n_x_partitions_in_test;
-    QLabel *label_12;
     QLineEdit *m_y_partitions_in_test;
-    QPushButton *calc_button_test;
-    QLabel *label_9;
     QLineEdit *max_iters_in_test;
+    QLineEdit *n_x_partitions_in_test;
+    QLabel *label_9;
+    QLineEdit *accuracy_in_test;
+    QLabel *label_13;
+    QLabel *label_7;
     QLabel *label_11;
+    QLabel *label_12;
+    QLineEdit *k_in_test;
+    QPushButton *calc_button_test;
     QTableWidget *out_table_test;
     QSpacerItem *horizontalSpacer_3;
     QGroupBox *groupBox_4;
@@ -107,31 +111,15 @@ public:
         groupBox->setMaximumSize(QSize(760, 100));
         gridLayout_2 = new QGridLayout(groupBox);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        label_3 = new QLabel(groupBox);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-
-        gridLayout_2->addWidget(label_3, 0, 2, 1, 1);
-
-        calc_button_main = new QPushButton(groupBox);
-        calc_button_main->setObjectName(QString::fromUtf8("calc_button_main"));
-
-        gridLayout_2->addWidget(calc_button_main, 1, 4, 1, 1);
-
-        max_iters_in_main = new QLineEdit(groupBox);
-        max_iters_in_main->setObjectName(QString::fromUtf8("max_iters_in_main"));
-        max_iters_in_main->setMaximumSize(QSize(150, 16777215));
-
-        gridLayout_2->addWidget(max_iters_in_main, 1, 3, 1, 1);
-
-        label_4 = new QLabel(groupBox);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-
-        gridLayout_2->addWidget(label_4, 1, 2, 1, 1);
-
         label = new QLabel(groupBox);
         label->setObjectName(QString::fromUtf8("label"));
 
         gridLayout_2->addWidget(label, 0, 0, 1, 1);
+
+        k_in_main = new QLineEdit(groupBox);
+        k_in_main->setObjectName(QString::fromUtf8("k_in_main"));
+
+        gridLayout_2->addWidget(k_in_main, 0, 5, 1, 1);
 
         accuracy_in_main = new QLineEdit(groupBox);
         accuracy_in_main->setObjectName(QString::fromUtf8("accuracy_in_main"));
@@ -139,11 +127,16 @@ public:
 
         gridLayout_2->addWidget(accuracy_in_main, 0, 3, 1, 1);
 
-        n_x_partitions_in_main = new QLineEdit(groupBox);
-        n_x_partitions_in_main->setObjectName(QString::fromUtf8("n_x_partitions_in_main"));
-        n_x_partitions_in_main->setMaximumSize(QSize(150, 16777215));
+        label_3 = new QLabel(groupBox);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
 
-        gridLayout_2->addWidget(n_x_partitions_in_main, 0, 1, 1, 1);
+        gridLayout_2->addWidget(label_3, 0, 2, 1, 1);
+
+        max_iters_in_main = new QLineEdit(groupBox);
+        max_iters_in_main->setObjectName(QString::fromUtf8("max_iters_in_main"));
+        max_iters_in_main->setMaximumSize(QSize(150, 16777215));
+
+        gridLayout_2->addWidget(max_iters_in_main, 1, 3, 1, 1);
 
         m_y_partitions_in_main = new QLineEdit(groupBox);
         m_y_partitions_in_main->setObjectName(QString::fromUtf8("m_y_partitions_in_main"));
@@ -151,10 +144,31 @@ public:
 
         gridLayout_2->addWidget(m_y_partitions_in_main, 1, 1, 1, 1);
 
+        calc_button_main = new QPushButton(groupBox);
+        calc_button_main->setObjectName(QString::fromUtf8("calc_button_main"));
+
+        gridLayout_2->addWidget(calc_button_main, 1, 5, 1, 1);
+
+        label_4 = new QLabel(groupBox);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+
+        gridLayout_2->addWidget(label_4, 1, 2, 1, 1);
+
+        n_x_partitions_in_main = new QLineEdit(groupBox);
+        n_x_partitions_in_main->setObjectName(QString::fromUtf8("n_x_partitions_in_main"));
+        n_x_partitions_in_main->setMaximumSize(QSize(150, 16777215));
+
+        gridLayout_2->addWidget(n_x_partitions_in_main, 0, 1, 1, 1);
+
         label_2 = new QLabel(groupBox);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
         gridLayout_2->addWidget(label_2, 1, 0, 1, 1);
+
+        label_5 = new QLabel(groupBox);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+
+        gridLayout_2->addWidget(label_5, 0, 4, 1, 1);
 
 
         gridLayout_4->addWidget(groupBox, 3, 1, 1, 1);
@@ -242,43 +256,11 @@ public:
         groupBox_3->setMaximumSize(QSize(760, 100));
         gridLayout_5 = new QGridLayout(groupBox_3);
         gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
-        label_7 = new QLabel(groupBox_3);
-        label_7->setObjectName(QString::fromUtf8("label_7"));
-
-        gridLayout_5->addWidget(label_7, 1, 2, 1, 1);
-
-        accuracy_in_test = new QLineEdit(groupBox_3);
-        accuracy_in_test->setObjectName(QString::fromUtf8("accuracy_in_test"));
-        accuracy_in_test->setMaximumSize(QSize(150, 16777215));
-
-        gridLayout_5->addWidget(accuracy_in_test, 0, 3, 1, 1);
-
-        n_x_partitions_in_test = new QLineEdit(groupBox_3);
-        n_x_partitions_in_test->setObjectName(QString::fromUtf8("n_x_partitions_in_test"));
-        n_x_partitions_in_test->setMaximumSize(QSize(150, 16777215));
-
-        gridLayout_5->addWidget(n_x_partitions_in_test, 0, 1, 1, 1);
-
-        label_12 = new QLabel(groupBox_3);
-        label_12->setObjectName(QString::fromUtf8("label_12"));
-
-        gridLayout_5->addWidget(label_12, 1, 0, 1, 1);
-
         m_y_partitions_in_test = new QLineEdit(groupBox_3);
         m_y_partitions_in_test->setObjectName(QString::fromUtf8("m_y_partitions_in_test"));
         m_y_partitions_in_test->setMaximumSize(QSize(150, 16777215));
 
         gridLayout_5->addWidget(m_y_partitions_in_test, 1, 1, 1, 1);
-
-        calc_button_test = new QPushButton(groupBox_3);
-        calc_button_test->setObjectName(QString::fromUtf8("calc_button_test"));
-
-        gridLayout_5->addWidget(calc_button_test, 1, 4, 1, 1);
-
-        label_9 = new QLabel(groupBox_3);
-        label_9->setObjectName(QString::fromUtf8("label_9"));
-
-        gridLayout_5->addWidget(label_9, 0, 0, 1, 1);
 
         max_iters_in_test = new QLineEdit(groupBox_3);
         max_iters_in_test->setObjectName(QString::fromUtf8("max_iters_in_test"));
@@ -286,10 +268,52 @@ public:
 
         gridLayout_5->addWidget(max_iters_in_test, 1, 3, 1, 1);
 
+        n_x_partitions_in_test = new QLineEdit(groupBox_3);
+        n_x_partitions_in_test->setObjectName(QString::fromUtf8("n_x_partitions_in_test"));
+        n_x_partitions_in_test->setMaximumSize(QSize(150, 16777215));
+
+        gridLayout_5->addWidget(n_x_partitions_in_test, 0, 1, 1, 1);
+
+        label_9 = new QLabel(groupBox_3);
+        label_9->setObjectName(QString::fromUtf8("label_9"));
+
+        gridLayout_5->addWidget(label_9, 0, 0, 1, 1);
+
+        accuracy_in_test = new QLineEdit(groupBox_3);
+        accuracy_in_test->setObjectName(QString::fromUtf8("accuracy_in_test"));
+        accuracy_in_test->setMaximumSize(QSize(150, 16777215));
+
+        gridLayout_5->addWidget(accuracy_in_test, 0, 3, 1, 1);
+
+        label_13 = new QLabel(groupBox_3);
+        label_13->setObjectName(QString::fromUtf8("label_13"));
+
+        gridLayout_5->addWidget(label_13, 0, 4, 1, 1);
+
+        label_7 = new QLabel(groupBox_3);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+
+        gridLayout_5->addWidget(label_7, 1, 2, 1, 1);
+
         label_11 = new QLabel(groupBox_3);
         label_11->setObjectName(QString::fromUtf8("label_11"));
 
         gridLayout_5->addWidget(label_11, 0, 2, 1, 1);
+
+        label_12 = new QLabel(groupBox_3);
+        label_12->setObjectName(QString::fromUtf8("label_12"));
+
+        gridLayout_5->addWidget(label_12, 1, 0, 1, 1);
+
+        k_in_test = new QLineEdit(groupBox_3);
+        k_in_test->setObjectName(QString::fromUtf8("k_in_test"));
+
+        gridLayout_5->addWidget(k_in_test, 0, 5, 1, 1);
+
+        calc_button_test = new QPushButton(groupBox_3);
+        calc_button_test->setObjectName(QString::fromUtf8("calc_button_test"));
+
+        gridLayout_5->addWidget(calc_button_test, 1, 5, 1, 1);
 
 
         gridLayout_7->addWidget(groupBox_3, 3, 1, 1, 1);
@@ -378,8 +402,7 @@ public:
         QWidget::setTabOrder(n_x_partitions_in_test, m_y_partitions_in_test);
         QWidget::setTabOrder(m_y_partitions_in_test, accuracy_in_test);
         QWidget::setTabOrder(accuracy_in_test, max_iters_in_test);
-        QWidget::setTabOrder(max_iters_in_test, calc_button_test);
-        QWidget::setTabOrder(calc_button_test, out_table_main);
+        QWidget::setTabOrder(max_iters_in_test, out_table_main);
         QWidget::setTabOrder(out_table_main, out_table_test);
         QWidget::setTabOrder(out_table_test, tabWidget);
 
@@ -395,15 +418,17 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "\320\233\320\260\320\261\320\276\321\200\320\260\321\202\320\276\321\200\320\275\320\260\321\217 \321\200\320\260\320\261\320\276\321\202\320\260 4", nullptr));
         groupBox->setTitle(QCoreApplication::translate("MainWindow", "\320\237\320\260\321\200\320\260\320\274\320\265\321\202\321\200\321\213 \320\274\320\265\321\202\320\276\320\264\320\260", nullptr));
-        label_3->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt;\">\320\242\320\276\321\207\320\275\320\276\321\201\321\202\321\214</span></p></body></html>", nullptr));
-        calc_button_main->setText(QCoreApplication::translate("MainWindow", "\320\240\320\260\321\201\321\201\321\207\320\270\321\202\320\260\321\202\321\214!", nullptr));
-        max_iters_in_main->setText(QCoreApplication::translate("MainWindow", "100000", nullptr));
-        label_4->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt;\">\320\230\321\202\320\265\321\200\320\260\321\206\320\270\320\270</span><span style=\" font-size:10pt; vertical-align:sub;\">max</span></p></body></html>", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt;\">\320\240\320\260\320\267\320\261\320\270\320\265\320\275\320\270\320\271 \320\277\320\276 X</span></p></body></html>", nullptr));
+        k_in_main->setText(QCoreApplication::translate("MainWindow", "1", nullptr));
         accuracy_in_main->setText(QCoreApplication::translate("MainWindow", "0.00001", nullptr));
-        n_x_partitions_in_main->setText(QCoreApplication::translate("MainWindow", "4", nullptr));
+        label_3->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt;\">\320\242\320\276\321\207\320\275\320\276\321\201\321\202\321\214</span></p></body></html>", nullptr));
+        max_iters_in_main->setText(QCoreApplication::translate("MainWindow", "100000", nullptr));
         m_y_partitions_in_main->setText(QCoreApplication::translate("MainWindow", "4", nullptr));
+        calc_button_main->setText(QCoreApplication::translate("MainWindow", "\320\240\320\260\321\201\321\201\321\207\320\270\321\202\320\260\321\202\321\214!", nullptr));
+        label_4->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt;\">\320\230\321\202\320\265\321\200\320\260\321\206\320\270\320\270</span><span style=\" font-size:10pt; vertical-align:sub;\">max</span></p></body></html>", nullptr));
+        n_x_partitions_in_main->setText(QCoreApplication::translate("MainWindow", "4", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt;\">\320\240\320\260\320\267\320\261\320\270\320\265\320\275\320\270\320\271 \320\277\320\276 Y</span></p></body></html>", nullptr));
+        label_5->setText(QCoreApplication::translate("MainWindow", "k:", nullptr));
 #if QT_CONFIG(tooltip)
         out_table_2_main->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">V2</span></p></body></html>", nullptr));
 #endif // QT_CONFIG(tooltip)
@@ -425,15 +450,17 @@ public:
 #endif // QT_CONFIG(whatsthis)
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QCoreApplication::translate("MainWindow", "\320\236\321\201\320\275\320\276\320\262\320\275\320\260\321\217 \320\267\320\260\320\264\320\260\321\207\320\260", nullptr));
         groupBox_3->setTitle(QCoreApplication::translate("MainWindow", "\320\237\320\260\321\200\320\260\320\274\320\265\321\202\321\200\321\213 \320\274\320\265\321\202\320\276\320\264\320\260", nullptr));
-        label_7->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt;\">\320\230\321\202\320\265\321\200\320\260\321\206\320\270\320\270</span><span style=\" font-size:10pt; vertical-align:sub;\">max</span></p></body></html>", nullptr));
-        accuracy_in_test->setText(QCoreApplication::translate("MainWindow", "0.00001", nullptr));
-        n_x_partitions_in_test->setText(QCoreApplication::translate("MainWindow", "4", nullptr));
-        label_12->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt;\">\320\240\320\260\320\267\320\261\320\270\320\265\320\275\320\270\320\271 \320\277\320\276 Y</span></p></body></html>", nullptr));
         m_y_partitions_in_test->setText(QCoreApplication::translate("MainWindow", "4", nullptr));
-        calc_button_test->setText(QCoreApplication::translate("MainWindow", "\320\240\320\260\321\201\321\201\321\207\320\270\321\202\320\260\321\202\321\214!", nullptr));
-        label_9->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt;\">\320\240\320\260\320\267\320\261\320\270\320\265\320\275\320\270\320\271 \320\277\320\276 X</span></p></body></html>", nullptr));
         max_iters_in_test->setText(QCoreApplication::translate("MainWindow", "100000", nullptr));
+        n_x_partitions_in_test->setText(QCoreApplication::translate("MainWindow", "4", nullptr));
+        label_9->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt;\">\320\240\320\260\320\267\320\261\320\270\320\265\320\275\320\270\320\271 \320\277\320\276 X</span></p></body></html>", nullptr));
+        accuracy_in_test->setText(QCoreApplication::translate("MainWindow", "0.00001", nullptr));
+        label_13->setText(QCoreApplication::translate("MainWindow", "k:", nullptr));
+        label_7->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt;\">\320\230\321\202\320\265\321\200\320\260\321\206\320\270\320\270</span><span style=\" font-size:10pt; vertical-align:sub;\">max</span></p></body></html>", nullptr));
         label_11->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt;\">\320\242\320\276\321\207\320\275\320\276\321\201\321\202\321\214</span></p></body></html>", nullptr));
+        label_12->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt;\">\320\240\320\260\320\267\320\261\320\270\320\265\320\275\320\270\320\271 \320\277\320\276 Y</span></p></body></html>", nullptr));
+        k_in_test->setText(QCoreApplication::translate("MainWindow", "1", nullptr));
+        calc_button_test->setText(QCoreApplication::translate("MainWindow", "\320\240\320\260\321\201\321\201\321\207\320\270\321\202\320\260\321\202\321\214!", nullptr));
 #if QT_CONFIG(tooltip)
         out_table_test->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">V</span></p></body></html>", nullptr));
 #endif // QT_CONFIG(tooltip)

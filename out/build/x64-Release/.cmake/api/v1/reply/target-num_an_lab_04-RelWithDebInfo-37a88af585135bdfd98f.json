@@ -34,7 +34,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 24,
+				"line" : 25,
 				"parent" : 0
 			}
 		]
@@ -74,37 +74,37 @@
 			[
 				{
 					"backtrace" : 0,
-					"path" : "D:/dev/numerical_analysis_lab_04/out/build/x64-Release/num_an_lab_04_autogen/include"
+					"path" : "C:/Users/Anton/Desktop/LABS/numerical_analysis_lab_04/out/build/x64-Release/num_an_lab_04_autogen/include"
 				},
 				{
 					"backtrace" : 2,
 					"isSystem" : true,
-					"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/include"
+					"path" : "D:/Qt/5.15.2/msvc2019_64/include"
 				},
 				{
 					"backtrace" : 2,
 					"isSystem" : true,
-					"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/include/QtCore"
+					"path" : "D:/Qt/5.15.2/msvc2019_64/include/QtCore"
 				},
 				{
 					"backtrace" : 2,
 					"isSystem" : true,
-					"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/./mkspecs/win32-msvc"
+					"path" : "D:/Qt/5.15.2/msvc2019_64/./mkspecs/win32-msvc"
 				},
 				{
 					"backtrace" : 2,
 					"isSystem" : true,
-					"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/include/QtGui"
+					"path" : "D:/Qt/5.15.2/msvc2019_64/include/QtGui"
 				},
 				{
 					"backtrace" : 2,
 					"isSystem" : true,
-					"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/include/QtANGLE"
+					"path" : "D:/Qt/5.15.2/msvc2019_64/include/QtANGLE"
 				},
 				{
 					"backtrace" : 2,
 					"isSystem" : true,
-					"path" : "D:/sdks/Qt/5.15.2/msvc2019_64/include/QtWidgets"
+					"path" : "D:/Qt/5.15.2/msvc2019_64/include/QtWidgets"
 				}
 			],
 			"language" : "CXX",
@@ -128,11 +128,11 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 0,
-			"id" : "num_an_lab_04_autogen::@6890427a1f51a3e7e1df"
+			"id" : "num_an_lab_04_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "num_an_lab_04_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+			"backtrace" : 0,
+			"id" : "num_an_lab_04_autogen::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "num_an_lab_04::@6890427a1f51a3e7e1df",
@@ -150,17 +150,17 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "D:\\sdks\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5Widgets.lib",
+				"fragment" : "D:\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5Widgets.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "D:\\sdks\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5Gui.lib",
+				"fragment" : "D:\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5Gui.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "D:\\sdks\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5Core.lib",
+				"fragment" : "D:\\Qt\\5.15.2\\msvc2019_64\\lib\\Qt5Core.lib",
 				"role" : "libraries"
 			},
 			{
